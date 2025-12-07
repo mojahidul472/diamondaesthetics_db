@@ -1,0 +1,1234 @@
+/* ===================================== */
+/* --- 1. Global Setup and Variables --- */
+/* ===================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+  font-family: myFirstFont;
+  src: url(fonts/mollie-glaston/Mollie\ Glaston.ttf);
+}
+
+:root {
+    --primary-color: #FDF4FE;  
+    --secondary-color: #E9FAFF; 
+    --light-bg: #AE6096;        
+    --card-bg: #FFFFFF;
+    --heading-font: 'Playfair Display', serif;
+    --body-font: 'Inter', sans-serif;
+}
+
+
+body {
+    font-family: var(--body-font);
+    color: black;
+    background-color: #FDF4FE; 
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+
+
+/* --- Logo ---*/
+.logo img{
+    width: 100%;
+    height: 100px;
+    background-size: cover;
+    align-items: start;
+
+}
+
+/* --- Utility Classes for Buttons --- */
+.primary-btn {
+    background-color: #AE6096;
+    color: #E9FAFF;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(209, 159, 232, 0.4);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.primary-btn:hover {
+    background-color:#AE6096;
+    box-shadow: #FDE7FF;
+}
+
+.secondary-btn {
+    background-color: #AE6096;
+    color: #E9FAFF;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-left: 10px;
+    transition: background-color 0.3s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+
+/* ===================================== */
+/* --- 2. Navigation/Header Styling --- */
+/* ===================================== */
+
+header{
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #FDE7FF;
+    padding: 0 5%;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.navbar nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.navbar nav ul li a {
+    text-decoration: none;
+    color: #201D1D;
+    padding: 0 15px;
+    font-size: 0.95em;
+    transition: color 0.5s;
+}
+
+.navbar nav ul li a:hover{
+    color: #dc7bbf;
+}
+
+.book-online-btn {
+    background-color: #AE6096;
+    color: #E9FAFF;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 20px; 
+    cursor: pointer;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.5s;
+}
+.book-online-btn:hover{
+    background-color: white;
+    color: #0b0b0b;
+}
+
+
+/* ===================================== */
+/* --- 3. Hero Styling --- */
+/* ===================================== */
+.hero-area {
+    display: flex;
+    padding: 50px 0;
+    align-items: center;
+
+}
+
+.hero-content {
+    flex: 1;
+    padding-right: 50px;
+}
+
+.hero-content h1 {
+    font-family: var(--myFirstFont);
+    font-size: 3.5em;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    color: #201D1D;
+}
+
+.hero-content h1 strong {
+    color: #201D1D; 
+    font-weight: 400;
+}
+
+.hero-content p {
+    margin-bottom: 40px;
+    font-size: 14px;
+    line-height: 1.2;
+    color: #303434;
+}
+.hero-buttons a{
+    transition: 0.5s;
+}
+
+.hero-buttons a:hover{
+    background-color: white;
+    color: #303434;
+}
+
+.hero-image {
+    flex: 1;
+    position: relative;
+    text-align: center;
+    top: 60px;
+}
+
+.hero-image img {
+    max-width: 80%;
+    height: auto;
+    z-index: 2; 
+    
+}
+/* Radial Glow Effect for Image */
+
+.hero-image img {
+    position: relative;
+    z-index: 1;
+}
+.hero-image::before {
+    content: "";
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    width: 480px;
+    height: 490px;
+    background: url("image/Group\ 1000007080.png") no-repeat center/cover;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}
+
+
+/* ===================================== */
+/* --- 4. Services Section Styling --- */
+/* ===================================== */
+.services-section {
+    padding: 40px 5% 0 5%;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #FDF4FE;
+    margin-top: 30px;
+}
+
+.services-section h2 {
+    font-family: var(--myFirstFont);
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #201D1D;
+}
+
+.services-section .subtitle {
+    margin-bottom: 50px;
+    color: #303434;
+    font-size: 15px;
+}
+
+.services-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.service-card {
+    flex: 1;
+    background-color: var(--card-bg);
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    text-align: left;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.service-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.service-card h3 {
+    font-family: var(--heading-font);
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    color: #201D1D;
+}
+
+.service-card p {
+    font-size: 16px;
+    color: #303434;
+    margin-bottom: 15px;
+}
+
+.service-card a {
+    color: #eb8af4;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 15px;
+    display: block;
+    transition: color 0.3s;
+}
+
+.service-card a:hover {
+    color: var(--secondary-color);
+}
+
+
+/* ===================================== */
+/* --- 5. Meet Jennifer Section Styling --- */
+/* ===================================== */
+.meet-jennifer-section {
+    padding: 50px  5% 0 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+    
+}
+
+.meet-jennifer-section .section-container {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}
+
+.jennifer-image {
+    position: relative;
+    max-width: 35%; 
+    padding: 5px ; 
+    background-color: #FDE7FF;
+    border-radius: 10px;
+    top: 10px;
+    
+}
+.jennifer-image img{
+    position: relative;
+    z-index: 1; 
+}
+.jennifer-image::before {
+    content: "";
+    position: absolute;
+    top: 35%;
+    left: 49%;
+    width: 420px;
+    height: 400px;
+    background: url("image/Group\ 1000007080.png") no-repeat center/cover;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}
+
+
+
+.jennifer-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 5px;
+}
+
+.jennifer-content {
+    flex: 1.5;
+    position: relative;
+    padding-right: 100px;
+}
+
+.jennifer-content h2 {
+    font-family: var(--myFirstFont);
+    font-size: 2em;
+    line-height: 1;
+    margin-bottom: 20px;
+}
+
+.jennifer-content h2 strong {
+    color: var(--primary-color);
+}
+
+.jennifer-content p {
+    color: #303434;
+    margin-bottom: 20px;
+    font-size: 17px;
+}
+.author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 18px;
+}
+
+.author img {
+    width: 55px;
+    height: 55px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.author h4 {
+    margin: 0;
+    font-weight: 400;
+}
+
+.author span {
+    font-size: 14px;
+    color: #303434;
+}
+
+.quote-box {
+    background-color: #FDE7FF;
+    padding: 15px 25px;
+    color: #201D1D;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 9px;
+    margin: 10px;
+}
+
+.more-about-btn {
+    border-radius:8px;
+    background-color: #AE6096; 
+    margin-top: 20px;
+}
+
+.social-side-bar {
+    position: absolute;
+    right: 0;
+    top: 77%;
+    transform: translateY(-50%) rotate(90deg);
+    transform-origin: 100% 0;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.social-side-bar .follow-text {
+    font-weight: 400;
+    letter-spacing: 5px;
+    transform: rotate(180deg);
+    color: rgb(101, 101, 235);
+}
+
+.social-side-bar a {
+    text-decoration: none;
+    color: #517aeb;
+    font-size: 1.1em;
+    transform: rotate(180deg);
+    transition: color 0.3s;
+}
+
+.social-side-bar a:hover {
+    color: var(--primary-color);
+}
+
+
+/* ===================================== */
+/* --- 6. Why Choose Section Styling --- */
+/* ===================================== */
+
+.why-choose-section {
+    padding: 80px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.why-choose-section h2 {
+    font-family: var(--myFirstFont);
+    font-size: 2.5em;
+    margin-bottom: 50px;
+}
+
+.choose-container {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    text-align: left;
+}  
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3px;
+    background-color: #fef1fe;
+    padding: 16px;
+    border-radius: 10px;
+    box-shadow: 0px 6px 15px 0px rgba(12, 4, 4, 0.05);
+    text-align: left;
+}
+
+.icon-bubble {
+    border-radius: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+    padding: 15px;
+    background-color: #eef5f8;
+   
+}
+
+.icon-bubble img{
+    width: 35px;
+    height: 35px;
+}
+
+.feature-item p {
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+.treatment-visual img {
+    width: 100%;
+    height: auto;
+}
+
+.star a{
+    color: rgba(250, 230, 15, 0.884);
+}
+
+
+.schedule-cta {
+    
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    background-color: #FDE7FF;
+}
+
+.schedule-cta p {
+    margin: 0;
+    line-height: 1.4;
+    font-size: 1.1em;
+    color: #303434;
+    margin-bottom: 15px;
+}
+
+.cta-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.primary-btn{
+    transition: 0.5s;
+}
+.primary-btn:hover{
+    background-color: white;
+    color: #0b0b0b;
+}
+
+.cta-buttons .primary-btn {
+    padding: 8px 15px;
+    font-size: 0.9em;
+}
+
+.cta-buttons .call-text {
+    font-size: 0.9em;
+    color: #303434;
+}
+
+
+/* ===================================== */
+/* --- 7. Popular Treatments Styling --- */
+/* ===================================== */
+.popular-treatments-section {
+    background-color: #FDE7FF;
+    text-align: center;
+    width: 1200px;
+    margin: auto;
+    padding: 60px 5%;
+}
+
+.text h3{
+    position: absolute;
+    left: 30px;
+    top: 20px;
+    color: #201D1D;
+   
+}
+
+.text-p p{
+    position: absolute;
+    left: 30px;
+    top: 40px;
+    color: #303434;
+   
+}
+
+.text h3{
+    font-size: 15px;
+}
+
+.text p{
+    font-size: 1.2em;
+
+}
+
+.treatment-btn{
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    background-color: #595858;
+    opacity: 45%;
+    color: #ffffff;
+    padding: 6px 10px;
+    border-radius: 70px;
+    font-weight: 600;
+    margin-left: 10px;
+    border-color: #ffffff;
+    display: inline-block;
+}
+
+.popular-treatments-section h2 {
+    font-family: var(--myFirstFont);
+    font-size: 2.5em;
+    margin-bottom: 50px;
+}
+
+.treatment-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+.treatment-item {
+    flex: 1;
+    border-radius: 8px;
+    
+}
+.treatment-item img{
+    transition: 0.7s;
+}
+.treatment-item {
+    transform: translateY(0);
+    overflow: hidden;
+}
+.treatment-item img:hover{
+   transform: scale(1.4); 
+}
+
+.treatment-item img {
+    width: 100%;
+    height: 300px; 
+    display: block;
+
+
+}
+
+
+/* ===================================== */
+/* --- 8. Smile Diffuser Styling --- */
+/* ===================================== */
+.results-section {
+    width: 1200px;
+    margin: auto;
+    padding: 60px 0;
+
+}
+
+.results-container {
+    width: 90%;
+    max-width: 1300px;
+    margin: auto;
+}
+
+.results-container h2 {
+    font-family: "Merriweather", serif;
+    font-size: 32px;
+    color: #201D1D;
+    margin-bottom: 5px;
+}
+
+.results-container .sub {
+    font-size: 18px;
+    color: #303434;
+    margin-bottom: 20px;
+}
+
+/* GRID IMAGES */
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+/* CARD */
+.result-card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.result-card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Play Icon */
+.play-icon {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    background: rgba(255, 255, 255, 0.95);
+    color: #303434;
+    font-size: 15px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+/* ===================================== */
+/* --- 9. Testimonials Styling --- */
+/* ===================================== */
+.testimonials-section {
+    width: 1200px;
+    margin: auto;
+    background-color: #FDE7FF;
+    text-align: center;
+    padding: 60px 5%;
+}
+
+.testimonials-section h2 {
+    font-family: var(--heading-font);
+    font-size: 2.5em;
+    margin-bottom: 50px;
+}
+
+.testimonials-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.testimonial-card {
+    flex: 1;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px #30343468;
+    text-align: left;
+}
+
+.testimonial-card blockquote {
+    margin-bottom: 20px;
+    color: #303434;
+    line-height: 1.5;
+}
+
+.client-info {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #303434;
+    padding-top: 15px;
+}
+
+.client-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+    object-fit: cover;
+}
+
+.client-name {
+    font-weight: 600;
+    color: #303434;
+
+}
+.client-name-box p{
+    font-size: 15px;
+    color: #AE6096;
+}
+
+/* ===================================== */
+/* --- Our Pricing – Affordable --- */
+/* ===================================== */
+
+/*
+h1 {
+margin-bottom: 18px;
+font-weight: 700;
+}
+
+ul {
+list-style: none;
+padding: 0;
+margin: 0;
+}
+
+ul li {
+position: relative;
+padding-left: 28px;
+font-size: 15px;
+margin-bottom: 10px;
+color: #5b4a55;
+}
+
+ul li::before {
+content: "✔";
+position: absolute;
+left: 0;
+top: 0;
+color: #c85fad;
+font-weight: bold;
+}
+
+.view-btn {
+display: inline-block;
+margin-top: 22px;
+background: #191919;
+color: white;
+padding: 12px 22px;
+border-radius: 8px;
+text-decoration: none;
+font-size: 15px;
+font-weight: 500;
+transition: 0.2s;
+}
+
+.view-btn:hover {
+background: #000;
+}
+*/
+
+
+/* ===================================== */
+/* --- 10. Pricing & CTA Styling --- */
+/* ===================================== */
+.pricing-cta-section {
+    padding: 10% 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+.final-cta-block {
+    background-color: #AE6096;
+    color: #303434;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 20px;
+    gap: 100px;
+    height: 345px;
+}
+
+.form-box {
+    background-color: #ffffff;
+    color: #303434;
+    padding: 8px 17px;
+    border: none;
+    border-radius: 20px; 
+    cursor: pointer;
+    font-weight: 600;
+    text-decoration: none;
+    position: relative;
+    left: 50px;
+}
+
+
+.input-group{
+    background-color: #30343410;
+    color: #201D1D;
+    padding: 8px 15px;
+    margin-bottom: 17px;
+    border: none;
+    border-radius: 9px; 
+    cursor: pointer;
+    font-weight: 200;
+    text-decoration: none;
+}
+
+.Contact-btn{
+    background-color: #eab1d9;
+    color: #E9FAFF;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 25px; 
+    cursor: pointer;
+    font-weight: 200;
+    text-decoration: none;
+    transition: 0.5s;
+}
+.Contact-btn:hover{
+    background-color: white;
+    color: #0b0b0b;
+}
+ 
+.submit-btn{
+    background-color: #0b0b0b;
+    color: #E9FAFF;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 8px; 
+    cursor: pointer;
+    font-weight: 200;
+    text-decoration: none;
+}
+
+.Book{
+    color: #201D1D;
+}
+.final-cta-block h2 {
+    font-family: var(--myFirstFont);
+    font-size: 2.2em;
+    color: rgb(250, 246, 246);
+    margin-bottom: 30px;
+}
+
+
+.final-cta-block p {
+    font-size: 1.1em;
+    margin-bottom: 89px;
+    color: #201D1D;
+}
+
+.cta-content {
+    flex: 2;
+
+}
+
+.cta-form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.cta-form input[type="email"] {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 1em;
+}
+
+.cta-form button {
+    width: 100%;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+
+/* ===================================== */
+/* --- 11. Footer Styling --- */
+/* ===================================== */
+
+.site-footer { 
+    padding: 60px 5% 20px;
+    font-size: 0.95em;
+    background-color: #201d1d0a;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    padding-bottom: 40px;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-logo {
+  width: 50%;
+  height: 100px;
+  background-size: cover;
+  margin-bottom: 15px;
+}
+
+.contact-info .contact-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    line-height: 1.5;
+    color: #303434;
+}
+
+.contact-info .contact-item i {
+    color: #303434;
+    margin-right: 10px;
+    padding-top: 2px;
+}
+
+.footer-column h3 {
+    font-family: var(--body-font); 
+    font-weight: 600;
+    font-size: 1.6em;
+    margin-bottom: 15px;
+    color: #201D1D;
+}
+
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column ul li {
+    margin-bottom: 12px;
+}
+
+.footer-column ul li a {
+    text-decoration: none;
+    color: #303434;
+    transition: color 0.5s;
+}
+
+.footer-column ul li a:hover {
+    color: var(--primary-color);
+}
+
+.map-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px #303434;
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 20px;
+    border-top: 1px solid #303434;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #303434;
+    font-size: 0.85em;
+}
+
+.social-links a {
+    text-decoration: none;
+    color: rgb(87, 87, 220);
+    font-size: 1.2em;
+    margin-left: 15px;
+    border-radius: 50%;
+    padding: 5px;
+    background-color: #eef5f8;
+   
+}
+
+.social-links a:hover {
+    color: var(--secondary-color);
+}
+
+
+/* ===================================== */
+/* --- 12. MEDIA QUERIES (Responsiveness) --- */
+/* ===================================== */
+
+@media (max-width: 1024px) {
+    .jennifer-content {
+        padding-right: 50px;
+    }
+    .social-side-bar {
+        right: -10px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* --- General Adjustments --- */
+    .hero-content h1 {
+        font-size: 2.5em;
+    }
+    
+    /* --- Navigation Adjustments --- */
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logo {
+        margin-bottom: 15px;
+    }
+
+    .navbar nav {
+        display: none; 
+    }
+    
+    .book-online-btn {
+        margin-top: 15px;
+        width: 100%;
+    }
+
+    /* --- Hero Section Adjustment --- */
+    .hero-section {
+        flex-direction: column; 
+        padding: 40px 5%;
+    }
+
+    .hero-content {
+        padding-right: 0;
+        text-align: center;
+        order: 2;
+    }
+
+    .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .secondary-btn {
+        margin-left: 0;
+    }
+
+    .hero-image {
+        order: 1;
+        margin-bottom: 20px;
+    }
+    
+    .hero-image img {
+        max-width: 100%;
+    }
+    
+    .hero-image::before {
+        filter: blur(30px);
+    }
+
+    /* --- Services Section Adjustment --- */
+    .services-grid {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .services-section h2 {
+        font-size: 2em;
+    }
+    
+    /* --- Meet Jennifer Adjustments --- */
+    .meet-jennifer-section .section-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .jennifer-image {
+        max-width: 80%;
+        margin: 0 auto;
+        order: 1;
+    }
+    
+    .jennifer-content {
+        order: 2;
+        padding-right: 0;
+        margin-top: 30px;
+    }
+
+    .jennifer-content h2 {
+        font-size: 2em;
+    }
+
+    .social-side-bar {
+        display: none;
+    }
+
+    /* --- Why Choose Adjustments --- */
+    .choose-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .why-choose-section h2 {
+        font-size: 2em;
+    }
+
+    .treatment-visual {
+        width: 100%;
+    }
+
+    .schedule-cta {
+        margin-top: 30px;
+    }
+    
+    .cta-buttons {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    /* --- Popular Treatments Adjustments --- */
+    .treatment-gallery {
+        flex-direction: column;
+    }
+    .treatment-item img {
+        height: 200px; 
+    }
+
+    /* --- Smile Diffuser Adjustments --- */
+    .before-after-grid {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    /* --- Testimonials Adjustments --- */
+    .testimonials-grid {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    /* --- Pricing & CTA Adjustments --- */
+    .pricing-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .final-cta-block {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px;
+    }
+    
+    .cta-content {
+        margin-bottom: 20px;
+    }
+    
+    .cta-form {
+        width: 100%;
+        align-items: center;
+    }
+
+    /* --- Footer Adjustments --- */
+    .footer-container {
+        flex-direction: column; 
+        text-align: center;
+        gap: 40px;
+    }
+    
+    .footer-column {
+        min-width: 100%;
+    }
+
+    .contact-info .contact-item {
+        justify-content: center;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 10px;
+    }
+    
+    .social-links {
+        margin-top: 15px;
+    }
+}
+
+
+
