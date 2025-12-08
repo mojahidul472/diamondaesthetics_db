@@ -595,21 +595,6 @@ header{
     margin: 0 auto;
 }
 
-/* Popular Treatments Section */
-.popular-treatments-section .treatment-gallery {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
-
-.popular-treatments-section .treatment-item {
-    flex: 1 1 220px; 
-    max-width: 300px;
-    box-sizing: border-box;
-    text-align: center;
-}
-
 .treatment-item {
     flex: 1;
     border-radius: 8px;
@@ -685,18 +670,6 @@ header{
     display: block;
 }
 
-/* Results Section */
-.results-section .results-grid {
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
-
-.results-section .result-card {
-    flex: 1 1 250px;
-    max-width: 350px;
-    text-align: center;
-}
 
 /* Play Icon */
 .play-icon {
@@ -1304,7 +1277,33 @@ header {
     align-items: flex-start;
   }
 }
+/* Popular Treatments Section */
+.popular-treatments-section .treatment-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
 
+.popular-treatments-section .treatment-item {
+    flex: 1 1 220px; 
+    max-width: 300px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* Results Section */
+.results-section .results-grid {
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.results-section .result-card {
+    flex: 1 1 250px;
+    max-width: 350px;
+    text-align: center;
+}
 
 /* ==============
    Small phones: ≤ 480px
