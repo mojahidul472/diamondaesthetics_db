@@ -535,7 +535,6 @@ header{
 /* ===================================== */
 .popular-treatments-section {
     background-color: #FDE7FF;
-    text-align: center;
     width: 1200px;
     margin: auto;
     padding: 60px 5%;
@@ -585,6 +584,7 @@ header{
     font-family: var(--myFirstFont);
     font-size: 2.5em;
     margin-bottom: 50px;
+    text-align: center;
 }
 
 .treatment-gallery {
@@ -595,6 +595,20 @@ header{
     margin: 0 auto;
 }
 
+/* Popular Treatments Section */
+.popular-treatments-section .treatment-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.popular-treatments-section .treatment-item {
+    flex: 1 1 220px; 
+    max-width: 300px;
+    box-sizing: border-box;
+    text-align: center;
+}
 
 .treatment-item {
     flex: 1;
@@ -671,6 +685,19 @@ header{
     display: block;
 }
 
+/* Results Section */
+.results-section .results-grid {
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.results-section .result-card {
+    flex: 1 1 250px;
+    max-width: 350px;
+    text-align: center;
+}
+
 /* Play Icon */
 .play-icon {
     position: absolute;
@@ -722,6 +749,19 @@ header{
     margin-bottom: 20px;
     color: #303434;
     line-height: 1.5;
+}
+
+.testimonials-section .testimonials-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.testimonials-section .testimonial-card {
+    flex: 1 1 250px;
+    max-width: 350px;
+    box-sizing: border-box;
 }
 
 .client-info {
@@ -1031,204 +1071,333 @@ background: #000;
 }
 
 
-/* ===================================== */
-/* --- 12. MEDIA QUERIES (Responsiveness) --- */
-/* ===================================== */
+/* ===========================
+   Responsive additions — paste at end of styles.css
+   =========================== */
 
+/* Utility: make images responsive everywhere */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Make header container fluid on small screens */
+header {
+  padding: 20px 4%;
+}
+
+/* Allow nav to wrap and become stacked on smaller widths */
+.navbar {
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* ensure logo doesn't blow up */
+.logo {
+  flex: 0 0 220px;
+  max-width: 220px;
+}
+.logo img {
+  height: auto;
+  max-height: 80px;
+  width: auto;
+}
+
+/* nav list baseline */
+.navbar nav {
+  flex: 1;
+}
+.navbar nav ul {
+  justify-content: flex-end;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* hide book button on very small screens to save space */
+.book-online-btn {
+  white-space: nowrap;
+}
+
+/* ==============
+   Tablet: ≤ 1024px
+   ============== */
 @media (max-width: 1024px) {
-    .jennifer-content {
-        padding-right: 50px;
-    }
-    .social-side-bar {
-        right: -10px;
-    }
+
+  .hero-area {
+    padding: 40px 0;
+    gap: 20px;
+  }
+
+  .hero-content {
+    padding-right: 30px;
+  }
+
+  .hero-content h1 {
+    font-size: 2.6rem; /* smaller headline */
+  }
+
+  .hero-image {
+    top: 30px;
+  }
+
+  .services-grid {
+    gap: 18px;
+  }
+
+  .treatment-gallery {
+    gap: 14px;
+  }
+
+  .results-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .testimonials-grid {
+    gap: 20px;
+  }
+
+  .final-cta-block {
+    gap: 40px;
+    height: auto;
+    padding: 30px;
+  }
+
+  .form-box {
+    left: 30px;
+  }
+
+  .footer-container {
+    gap: 18px;
+  }
 }
 
+
+/* ==============
+   Mobile: ≤ 768px
+   ============== */
 @media (max-width: 768px) {
-    /* --- General Adjustments --- */
-    .hero-content h1 {
-        font-size: 2.5em;
-    }
-    
-    /* --- Navigation Adjustments --- */
-    .navbar {
-        flex-direction: column;
-        text-align: center;
-    }
 
-    .logo {
-        margin-bottom: 15px;
-    }
+  /* Layout: stack navbar items vertically */
+  .navbar {
+    align-items: flex-start;
+  }
 
-    .navbar nav {
-        display: none; 
-    }
-    
-    .book-online-btn {
-        margin-top: 15px;
-        width: 100%;
-    }
+  .logo {
+    flex: 0 0 auto;
+    margin-bottom: 8px;
+  }
 
-    /* --- Hero Section Adjustment --- */
-    .hero-section {
-        flex-direction: column; 
-        padding: 40px 5%;
-    }
+  .navbar nav {
+    width: 100%;
+  }
 
-    .hero-content {
-        padding-right: 0;
-        text-align: center;
-        order: 2;
-    }
+  /* make nav links full-width rows */
+  .navbar nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    padding-left: 0;
+    margin-top: 8px;
+  }
 
-    .hero-buttons {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
+  .navbar nav ul li a {
+    padding: 10px 12px;
+    display: block;
+    width: 100%;
+    background: transparent;
+  }
 
-    .secondary-btn {
-        margin-left: 0;
-    }
+  .book-online-btn {
+    display: none; /* hide CTA in header on mobile */
+  }
 
-    .hero-image {
-        order: 1;
-        margin-bottom: 20px;
-    }
-    
-    .hero-image img {
-        max-width: 100%;
-    }
-    
-    .hero-image::before {
-        filter: blur(30px);
-    }
+  /* Hero: column stack, image below text */
+  .hero-area {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 0;
+    align-items: stretch;
+  }
 
-    /* --- Services Section Adjustment --- */
-    .services-grid {
-        flex-direction: column;
-        gap: 20px;
-    }
-    
-    .services-section h2 {
-        font-size: 2em;
-    }
-    
-    /* --- Meet Jennifer Adjustments --- */
-    .meet-jennifer-section .section-container {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .jennifer-image {
-        max-width: 80%;
-        margin: 0 auto;
-        order: 1;
-    }
-    
-    .jennifer-content {
-        order: 2;
-        padding-right: 0;
-        margin-top: 30px;
-    }
+  .hero-content {
+    padding-right: 0;
+    order: 1;
+    text-align: center;
+  }
 
-    .jennifer-content h2 {
-        font-size: 2em;
-    }
+  .hero-content h1 {
+    font-size: 1.8rem;
+    line-height: 1.1;
+  }
 
-    .social-side-bar {
-        display: none;
-    }
+  .hero-image {
+    order: 2;
+    top: 0;
+    margin-top: 20px;
+    text-align: center;
+  }
 
-    /* --- Why Choose Adjustments --- */
-    .choose-container {
-        flex-direction: column;
-        gap: 30px;
-    }
-    
-    .why-choose-section h2 {
-        font-size: 2em;
-    }
+  .hero-image img {
+    max-width: 90%;
+    margin: 0 auto;
+  }
 
-    .treatment-visual {
-        width: 100%;
-    }
+  /* Services: switch to 2 columns then 1 column */
+  .services-grid {
+    flex-direction: column;
+    gap: 14px;
+  }
+  .service-card {
+    width: 100%;
+  }
 
-    .schedule-cta {
-        margin-top: 30px;
-    }
-    
-    .cta-buttons {
-        width: 100%;
-        justify-content: space-between;
-    }
+  /* Why Choose: stack columns */
+  .choose-container {
+    flex-direction: column;
+    gap: 18px;
+  }
 
-    /* --- Popular Treatments Adjustments --- */
-    .treatment-gallery {
-        flex-direction: column;
-    }
-    .treatment-item img {
-        height: 200px; 
-    }
+  /* Popular treatments: stack items vertically */
+  .treatment-gallery {
+    flex-direction: column;
+    gap: 18px;
+  }
 
-    /* --- Smile Diffuser Adjustments --- */
-    .before-after-grid {
-        flex-direction: column;
-        gap: 20px;
-    }
+  /* Results grid -> single column */
+  .results-grid {
+    grid-template-columns: 1fr;
+  }
 
-    /* --- Testimonials Adjustments --- */
-    .testimonials-grid {
-        flex-direction: column;
-        gap: 20px;
-    }
+  /* Testimonials: single column */
+  .testimonials-grid {
+    flex-direction: column;
+  }
 
-    /* --- Pricing & CTA Adjustments --- */
-    .pricing-container {
-        flex-direction: column;
-        gap: 20px;
-    }
-    
-    .final-cta-block {
-        flex-direction: column;
-        text-align: center;
-        padding: 30px;
-    }
-    
-    .cta-content {
-        margin-bottom: 20px;
-    }
-    
-    .cta-form {
-        width: 100%;
-        align-items: center;
-    }
+  /* CTA: stack form & content */
+  .final-cta-block {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 18px;
+    height: auto;
+  }
+  .form-box {
+    left: 0;
+    padding: 16px;
+    border-radius: 12px;
+  }
+  .cta-content {
+    padding: 0 16px 18px;
+  }
 
-    /* --- Footer Adjustments --- */
-    .footer-container {
-        flex-direction: column; 
-        text-align: center;
-        gap: 40px;
-    }
-    
-    .footer-column {
-        min-width: 100%;
-    }
+  /* Footer: stack columns */
+  .footer-container {
+    flex-direction: column;
+    gap: 24px;
+  }
 
-    .contact-info .contact-item {
-        justify-content: center;
+  .footer-bottom {
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+  }
+}
+
+
+/* ==============
+   Small phones: ≤ 480px
+   ============== */
+@media (max-width: 480px) {
+
+  body {
+    font-size: 15px;
+  }
+
+  .hero-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .primary-btn, .secondary-btn {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  .service-card h3 {
+    font-size: 1rem;
+  }
+
+  .treatment-item img {
+    height: auto;
+  }
+
+  .result-card img {
+    height: 180px;
+  }
+
+  .client-name {
+    font-size: 14px;
+  }
+
+  .footer-logo {
+    width: 60%;
+  }
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .popular-treatments-section .treatment-item,
+    .results-section .result-card,
+    .testimonials-section .testimonial-card {
+        flex: 1 1 45%; /* Two items per row */
     }
-    
-    .footer-bottom {
-        flex-direction: column;
-        text-align: center;
-        padding-top: 10px;
+    .popular-treatments-section h2{
+        text-align: left;
     }
-    
-    .social-links {
-        margin-top: 15px;
+    .testimonials-section h2{
+        text-align: left;
+        width: 400px;
+    }
+    .results-section{
+        text-align: left;
+        width: 400px;
+    }
+    .popular-treatments-section{
+        width: 400px;
+        padding: 60px 15%;
     }
 }
+
+@media (max-width: 480px) {
+    .popular-treatments-section .treatment-item,
+    .results-section .result-card,
+    .testimonials-section .testimonial-card {
+        flex: 1 1 90%; /* One item per row */
+    }
+}
+
+/* ==============
+   Small UX tweaks
+   ============== */
+
+/* prevent overscroll horizontal on very narrow elements */
+html, body {
+  overflow-x: hidden;
+}
+
+/* make buttons and inputs comfortable on touch */
+button, .primary-btn, .secondary-btn, .submit-btn, .book-online-btn {
+  touch-action: manipulation;
+}
+
+/* improve readability for long paragraphs on small screens */
+.hero-content p, .services-section .subtitle, .jennifer-content p {
+  max-width: ;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 
 
 
