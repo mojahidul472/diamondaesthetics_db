@@ -8,8 +8,12 @@
 }
 
 @font-face {
-  font-family: myFirstFont;
-  src: url(fonts/mollie-glaston/Mollie\ Glaston.ttf);
+  font-family: "myFirstFont";
+  src: url("/assets/fonts/mollie-glaston/Mollie\ Glaston.ttf");
+}
+@font-face{
+    font-family: "mySeconde";
+    src: url(/assets/fonts/product\ sans\ full/);
 }
 
 :root {
@@ -23,13 +27,12 @@
 
 
 body {
-    font-family: var(--body-font);
+    font-family: "mySeconde";
     color: black;
     background-color: #FDF4FE; 
     font-size: 17px;
     line-height: 1.6;
 }
-
 
 
 /* --- Logo ---*/
@@ -81,8 +84,8 @@ body {
 /* ===================================== */
 
 header{
-    max-width: 1200px;
-    margin: 0 auto;
+    width: 1400px;
+    margin: auto;
     background-color: #FDE7FF;
     padding: 0 5%;
 }
@@ -90,7 +93,7 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 0;
+    padding: 15px 0;
 }
 
 .navbar nav ul {
@@ -104,6 +107,7 @@ header{
     padding: 0 15px;
     font-size: 0.95em;
     transition: color 0.5s;
+    font-family: "mySeconde";
 }
 
 .navbar nav ul li a:hover{
@@ -130,21 +134,27 @@ header{
 /* ===================================== */
 /* --- 3. Hero Styling --- */
 /* ===================================== */
-.hero-area {
+#home{
+    width: 1400px;
+    margin: auto;
+    background-color: #FDE7FF;
+    padding: 50px 10% 42px 5%;
+}
+.hero-section {
     display: flex;
-    padding: 50px 0;
     align-items: center;
+    justify-content: space-between;
 
 }
 
 .hero-content {
     flex: 1;
-    padding-right: 50px;
+    padding-right: 70px;
 }
 
 .hero-content h1 {
-    font-family: var(--myFirstFont);
-    font-size: 3.5em;
+    font-family: "myFirstFont";
+    font-size: 60px;
     line-height: 1.1;
     margin-bottom: 20px;
     color: #201D1D;
@@ -160,6 +170,7 @@ header{
     font-size: 14px;
     line-height: 1.2;
     color: #303434;
+    font-family: "mySeconde";
 }
 .hero-buttons a{
     transition: 0.5s;
@@ -174,7 +185,7 @@ header{
     flex: 1;
     position: relative;
     text-align: center;
-    top: 60px;
+    top: 50px;
 }
 
 .hero-image img {
@@ -189,14 +200,14 @@ header{
     position: relative;
     z-index: 1;
 }
-.hero-image::before {
+.hero-image::after {
     content: "";
     position: absolute;
     top: 20%;
     left: 40%;
-    width: 480px;
-    height: 490px;
-    background: url("image/Group\ 1000007080.png") no-repeat center/cover;
+    width: 550px;
+    height: 500px;
+    background: url("/assets/image/Group\ 1000007080.png") no-repeat center/cover;
     transform: translate(-50%, -50%);
     z-index: 0;
 }
@@ -205,18 +216,22 @@ header{
 /* ===================================== */
 /* --- 4. Services Section Styling --- */
 /* ===================================== */
+#services{
+
+    max-width: 1400px;
+    margin: auto;
+}
 .services-section {
-    padding: 40px 5% 0 5%;
+    padding: 40px 5% 30px 5%;
     text-align: center;
-    max-width: 1200px;
-    margin: 0 auto;
     background-color: #FDF4FE;
     margin-top: 30px;
 }
 
 .services-section h2 {
-    font-family: var(--myFirstFont);
-    font-size: 2.5em;
+    font-family: "myFirstFont";
+    font-size: 60px;
+    font-weight: 700;
     margin-bottom: 10px;
     color: #201D1D;
 }
@@ -224,7 +239,7 @@ header{
 .services-section .subtitle {
     margin-bottom: 50px;
     color: #303434;
-    font-size: 15px;
+    font-size: 17px;
 }
 
 .services-grid {
@@ -242,10 +257,28 @@ header{
     text-align: left;
     transition: transform 0.3s, box-shadow 0.3s;
 }
+.service-card h3{
+    margin: 0 5%;
+}
+.service-card p{
+    margin: 20px 5%;
+}
+
+.service-card a {
+    border-top: 1px dashed #303434;
+    padding: 10px 0px 0px 0px;
+    text-align: center;
+    margin: 30px 5% 20px 5%;
+}
+.service-card{
+    transition: 1s;
+}
 
 .service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px #303434;
+    background-color: #e780c838;
+    cursor: pointer;
 }
 
 .service-card img {
@@ -256,55 +289,56 @@ header{
 }
 
 .service-card h3 {
-    font-family: var(--heading-font);
-    font-size: 1.1em;
+    font-family: "myFirstFont";
+    font-size: 22px;
     margin-bottom: 10px;
     color: #201D1D;
 }
 
 .service-card p {
-    font-size: 16px;
+    font-size: 17px;
     color: #303434;
     margin-bottom: 15px;
+    font-family: "mySeconde";
 }
 
 .service-card a {
     color: #eb8af4;
     text-decoration: none;
     font-weight: 400;
-    font-size: 15px;
+    font-size: 17px;
     display: block;
     transition: color 0.3s;
 }
 
-.service-card a:hover {
-    color: var(--secondary-color);
-}
 
 
 /* ===================================== */
 /* --- 5. Meet Jennifer Section Styling --- */
 /* ===================================== */
+
+#about{
+    max-width: 1400px;
+    margin: auto;
+}
 .meet-jennifer-section {
-    padding: 50px  5% 0 5%;
-    max-width: 1200px;
-    margin: 0 auto;
+    padding: 80px 5% 0 5%;
     
 }
 
 .meet-jennifer-section .section-container {
     display: flex;
-    gap: 50px;
+    gap: 20px;
     align-items: center;
 }
 
 .jennifer-image {
     position: relative;
-    max-width: 35%; 
+    max-width: 45%; 
     padding: 5px ; 
     background-color: #FDE7FF;
-    border-radius: 10px;
-    top: 10px;
+    border-radius: 20px;
+    top: -50px;
     
 }
 .jennifer-image img{
@@ -318,7 +352,7 @@ header{
     left: 49%;
     width: 420px;
     height: 400px;
-    background: url("image/Group\ 1000007080.png") no-repeat center/cover;
+    background: url("/assets/image/Group\ 1000007080.png") no-repeat center/cover;
     transform: translate(-50%, -50%);
     z-index: 0;
 }
@@ -335,14 +369,19 @@ header{
 .jennifer-content {
     flex: 1.5;
     position: relative;
-    padding-right: 100px;
+    padding-right: 70px;
 }
 
 .jennifer-content h2 {
-    font-family: var(--myFirstFont);
-    font-size: 2em;
-    line-height: 1;
+    font-family: "myFirstFont";
+    font-size: 40px;
+    line-height: 1.2;
     margin-bottom: 20px;
+}
+
+.jennifer-content h4{
+    padding: 10px 0;
+    font-family: "mySeconde";
 }
 
 .jennifer-content h2 strong {
@@ -353,6 +392,7 @@ header{
     color: #303434;
     margin-bottom: 20px;
     font-size: 17px;
+    font-family: "mySeconde";
 }
 .author {
     display: flex;
@@ -363,14 +403,13 @@ header{
 
 .author img {
     width: 55px;
-    height: 55px;
-    background-color: white;
-    border-radius: 50%;
+    height: 65px;
+    background-color: rgba(134, 130, 130, 0.281);
 }
-
 .author h4 {
-    margin: 0;
     font-weight: 400;
+    padding: 2px 0;
+    margin-top: 20px;
 }
 
 .author span {
@@ -380,70 +419,66 @@ header{
 
 .quote-box {
     background-color: #FDE7FF;
-    padding: 15px 25px;
-    color: #201D1D;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    border-radius: 9px;
-    margin: 10px;
+    padding: 10px 25px;
+    border-radius: 15px;
 }
 
 .more-about-btn {
-    border-radius:8px;
+    border-radius:35px;
     background-color: #AE6096; 
-    margin-top: 20px;
+    margin: 20px 0;
 }
 
 .social-side-bar {
     position: absolute;
     right: 0;
-    top: 77%;
+    top: 60%;
     transform: translateY(-50%) rotate(90deg);
     transform-origin: 100% 0;
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 10px;
+}
+.social-side-bar img{
+    width: 100%;
+    height: 50px;
+    border-radius: 50%;
+    transition: 0.8s;
 }
 
-.social-side-bar .follow-text {
-    font-weight: 400;
-    letter-spacing: 5px;
-    transform: rotate(180deg);
-    color: rgb(101, 101, 235);
-}
 
 .social-side-bar a {
-    text-decoration: none;
-    color: #517aeb;
-    font-size: 1.1em;
-    transform: rotate(180deg);
-    transition: color 0.3s;
+    transform: rotate(-90deg);
+    transition: 0.5s;
 }
 
-.social-side-bar a:hover {
-    color: var(--primary-color);
+.social-side-bar img:hover {
+    background-color: #e780c838;
+    cursor: pointer;  
 }
 
 
 /* ===================================== */
 /* --- 6. Why Choose Section Styling --- */
 /* ===================================== */
-
+#why-choose{
+    max-width: 1400px;
+    margin:  auto;
+}
 .why-choose-section {
     padding: 80px 5%;
-    max-width: 1200px;
-    margin: 0 auto;
     text-align: center;
 }
 
 .why-choose-section h2 {
-    font-family: var(--myFirstFont);
-    font-size: 2.5em;
-    margin-bottom: 50px;
+    font-family: "myFirstFont";
+    font-size: 38px;
+    margin-bottom: 10px;
 }
 
 .choose-container {
     display: flex;
-    gap: 50px;
+    gap: 70px;
     align-items: center;
     text-align: left;
 }  
@@ -453,10 +488,9 @@ header{
     align-items: center;
     margin-bottom: 3px;
     background-color: #fef1fe;
-    padding: 16px;
-    border-radius: 10px;
-    box-shadow: 0px 6px 15px 0px rgba(12, 4, 4, 0.05);
+    padding: 10px;
     text-align: left;
+    border-top: 1px solid #30343450;
 }
 
 .icon-bubble {
@@ -466,7 +500,7 @@ header{
     align-items: center;
     margin-right: 15px;
     padding: 15px;
-    background-color: #eef5f8;
+    background-color: #ffffff;
    
 }
 
@@ -476,17 +510,14 @@ header{
 }
 
 .feature-item p {
-    font-size: 1.1em;
+    font-size: 20px;
     font-weight: 500;
+    font-family: "mySeconde";
 }
 
 .treatment-visual img {
     width: 100%;
-    height: auto;
-}
-
-.star a{
-    color: rgba(250, 230, 15, 0.884);
+    height: 400px;
 }
 
 
@@ -501,7 +532,7 @@ header{
 .schedule-cta p {
     margin: 0;
     line-height: 1.4;
-    font-size: 1.1em;
+    font-size: 20px;
     color: #303434;
     margin-bottom: 15px;
 }
@@ -533,18 +564,19 @@ header{
 /* ===================================== */
 /* --- 7. Popular Treatments Styling --- */
 /* ===================================== */
+
 .popular-treatments-section {
     background-color: #FDE7FF;
-    width: 1200px;
-    margin: auto;
     padding: 60px 5%;
+    width: 1400px;
+    margin: auto;
 }
 
 .text h3{
     position: absolute;
     left: 30px;
     top: 20px;
-    color: #201D1D;
+    color: #ffffff;
    
 }
 
@@ -552,16 +584,19 @@ header{
     position: absolute;
     left: 30px;
     top: 40px;
-    color: #303434;
+    color: #ffffff;
+    text-align: left;
    
 }
 
 .text h3{
     font-size: 15px;
+    font-family: "myFirstFont";
 }
 
 .text p{
     font-size: 1.2em;
+    font-family: "mySeconde";
 
 }
 
@@ -569,35 +604,33 @@ header{
     position: absolute;
     left: 20px;
     bottom: 20px;
-    background-color: #595858;
-    opacity: 45%;
+    background-color: #59585827;
     color: #ffffff;
-    padding: 6px 10px;
+    padding: 10px 30px;
     border-radius: 70px;
     font-weight: 600;
     margin-left: 10px;
     border-color: #ffffff;
     display: inline-block;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.treatment-btn:hover{
+   background-color: #AE6096;
 }
 
 .popular-treatments-section h2 {
-    font-family: var(--myFirstFont);
+    font-family: "myFirstFont";
     font-size: 2.5em;
     margin-bottom: 50px;
     text-align: center;
 }
 
-.treatment-gallery {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
+
 
 .treatment-item {
     flex: 1;
-    border-radius: 8px;
+    border-radius: 8px;  
     
 }
 .treatment-item img{
@@ -615,8 +648,6 @@ header{
     width: 100%;
     height: 300px; 
     display: block;
-
-
 }
 
 
@@ -624,20 +655,19 @@ header{
 /* --- 8. Smile Diffuser Styling --- */
 /* ===================================== */
 .results-section {
-    width: 1200px;
+    width: 1400px;
     margin: auto;
-    padding: 60px 0;
+    padding: 60px 5%;
 
 }
 
 .results-container {
-    width: 90%;
-    max-width: 1300px;
+    width: 100%;
     margin: auto;
 }
 
 .results-container h2 {
-    font-family: "Merriweather", serif;
+    font-family: "myFirstFont";
     font-size: 32px;
     color: #201D1D;
     margin-bottom: 5px;
@@ -688,7 +718,7 @@ header{
 /* --- 9. Testimonials Styling --- */
 /* ===================================== */
 .testimonials-section {
-    width: 1200px;
+    width: 1400px;
     margin: auto;
     background-color: #FDE7FF;
     text-align: center;
@@ -696,7 +726,7 @@ header{
 }
 
 .testimonials-section h2 {
-    font-family: var(--heading-font);
+    font-family: "myFirstFont";
     font-size: 2.5em;
     margin-bottom: 50px;
 }
@@ -761,6 +791,10 @@ header{
     font-size: 15px;
     color: #AE6096;
 }
+.star a{
+    color: rgba(245, 223, 27, 0.945);
+
+}
 
 /* ===================================== */
 /* --- Our Pricing – Affordable --- */
@@ -819,7 +853,7 @@ background: #000;
 /* ===================================== */
 .pricing-cta-section {
     padding: 10% 5%;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     text-align: center;
 }
@@ -892,7 +926,7 @@ background: #000;
     color: #201D1D;
 }
 .final-cta-block h2 {
-    font-family: var(--myFirstFont);
+    font-family: "myFirstFont";
     font-size: 2.2em;
     color: rgb(250, 246, 246);
     margin-bottom: 30px;
@@ -945,11 +979,11 @@ background: #000;
 .site-footer { 
     padding: 60px 5% 20px;
     font-size: 0.95em;
-    background-color: #201d1d0a;
+    background-color: #2c28280a;
 }
 
 .footer-container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -984,7 +1018,7 @@ background: #000;
 }
 
 .footer-column h3 {
-    font-family: var(--body-font); 
+    font-family: "myFirstFont"; 
     font-weight: 600;
     font-size: 1.6em;
     margin-bottom: 15px;
@@ -1005,15 +1039,15 @@ background: #000;
     transition: color 0.5s;
 }
 
-.footer-column ul li a:hover {
-    color: var(--primary-color);
-}
 
 .map-image {
     max-width: 100%;
     height: auto;
     border-radius: 8px;
     box-shadow: 0 4px 10px #303434;
+}
+.map-image:hover{
+    cursor: pointer;
 }
 
 .footer-bottom {
@@ -1047,50 +1081,93 @@ background: #000;
 /* ===========================
    Responsive additions — paste at end of styles.css
    =========================== */
+/* ====================================== */
+/*      HEADER & NAVBAR RESPONSIVE        */
+/* ====================================== */
 
-/* Utility: make images responsive everywhere */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
+/* ----------- Large Tablet (max 1200px) ----------- */
+@media (max-width: 1200px) {
+    header {
+        width: 95%;
+        padding: 0 3%;
+    }
 
-/* Make header container fluid on small screens */
-header {
-  padding: 20px 4%;
-}
+    .navbar nav ul li a {
+        font-size: 0.9em;
+        padding: 0 12px;
+    }
 
-/* Allow nav to wrap and become stacked on smaller widths */
-.navbar {
-  gap: 16px;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-/* ensure logo doesn't blow up */
-.logo {
-  flex: 0 0 220px;
-  max-width: 220px;
-}
-.logo img {
-  height: auto;
-  max-height: 80px;
-  width: auto;
+    .book-online-btn {
+        padding: 7px 18px;
+        font-size: 0.85em;
+    }
 }
 
-/* nav list baseline */
-.navbar nav {
-  flex: 1;
-}
-.navbar nav ul {
-  justify-content: flex-end;
-  gap: 10px;
-  flex-wrap: wrap;
+/* ----------- Tablet (max 992px) ----------- */
+@media (max-width: 992px) {
+    .navbar {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+
+    .navbar nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .navbar nav ul li a {
+        display: block;
+        padding: 8px 0;
+        font-size: 0.9em;
+    }
+
+    .book-online-btn {
+        margin-top: 8px;
+        padding: 7px 16px;
+        font-size: 0.85em;
+    }
 }
 
-/* hide book button on very small screens to save space */
-.book-online-btn {
-  white-space: nowrap;
+/* ----------- Mobile (max 768px) ----------- */
+@media (max-width: 768px) {
+    .logo img {
+        width: 120px;
+    }
+
+    header {
+        padding: 0 5%;
+    }
+
+    .navbar nav ul li a {
+        font-size: 0.85em;
+    }
+
+    .book-online-btn {
+        font-size: 0.8em;
+        padding: 6px 14px;
+    }
+}
+
+/* ----------- Small Mobile (max 576px) ----------- */
+@media (max-width: 576px) {
+    header {
+        padding: 0 3%;
+    }
+
+    .logo img {
+        width: 100px;
+    }
+
+    .navbar nav ul li a {
+        font-size: 0.8em;
+        padding: 6px 0;
+    }
+
+    .book-online-btn {
+        font-size: 0.75em;
+        padding: 5px 12px;
+    }
 }
 
 /* ==============
@@ -1098,22 +1175,215 @@ header {
    ============== */
 @media (max-width: 1024px) {
 
-  .hero-area {
-    padding: 40px 0;
-    gap: 20px;
-  }
+/* ========================= */
+/*     HERO RESPONSIVE       */
+/* ========================= */
 
-  .hero-content {
-    padding-right: 30px;
-  }
+/* Large Tablet / Small Laptop */
+@media (max-width: 1200px) {
+    #home {
+        width: 100%;
+        padding: 50px 5%;
+    }
 
-  .hero-content h1 {
-    font-size: 2.6rem; /* smaller headline */
-  }
+    .hero-content h1 {
+        font-size: 48px;
+        line-height: 1.1;
+    }
 
-  .hero-image {
-    top: 30px;
-  }
+    .hero-image img {
+        max-width: 90%;
+    }
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+    .hero-section {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .hero-content {
+        padding-right: 0;
+    }
+
+    .hero-content h1 {
+        font-size: 38px;
+    }
+
+    .hero-content p {
+        width: 90%;
+        margin: 0 auto 30px;
+        font-size: 15px;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+        display: flex;
+        gap: 15px;
+    }
+
+    .hero-image {
+        top: 0;
+    }
+
+    .hero-image img {
+        max-width: 70%;
+        margin: auto;
+    }
+
+    .hero-image::after {
+        width: 350px;
+        height: 350px;
+        top: 35%;
+        left: 50%;
+    }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+    #home {
+        padding: 40px 20px;
+        width: 100%;
+    }
+
+    .hero-content h1 {
+        font-size: 28px;
+        line-height: 1.2;
+    }
+
+    .hero-content p {
+        font-size: 14px;
+        line-height: 1.5;
+        width: 100%;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .hero-image img {
+        max-width: 90%;
+    }
+
+    .hero-image::after {
+        width: 250px;
+        height: 250px;
+        top: 45%;
+        left: 50%;
+    }
+}
+
+/* ============================= */
+/*   Meet Jennifer Responsive    */
+/* ============================= */
+
+@media (max-width: 1200px) {
+    .jennifer-content {
+        padding-right: 30px;
+    }
+
+    .jennifer-content h2 {
+        font-size: 34px;
+    }
+}
+
+
+/* ---------- Tablet (max 992px) ---------- */
+@media (max-width: 992px) {
+
+    .meet-jennifer-section .section-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .jennifer-image {
+        max-width: 100%;
+        top: 0;
+    }
+
+    .jennifer-image img {
+        width: 80%;
+        margin: auto;
+    }
+
+    .jennifer-content {
+        padding-right: 0;
+    }
+
+    .social-side-bar {
+        position: static;
+        transform: rotate(0deg);
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    .social-side-bar a {
+        transform: rotate(0deg);
+    }
+}
+
+
+/* ---------- Mobile (max 768px) ---------- */
+@media (max-width: 768px) {
+
+    .jennifer-content h2 {
+        font-size: 28px;
+        line-height: 1.3;
+    }
+
+    .jennifer-content p {
+        font-size: 15px;
+        line-height: 1.5;
+    }
+
+    .jennifer-image img {
+        width: 100%;
+    }
+
+    .quote-box {
+        margin-top: 20px;
+        padding: 20px;
+    }
+
+    .quote-box p {
+        font-size: 15px;
+        line-height: 1.5;
+    }
+
+    .author img {
+        width: 45px;
+        height: 55px;
+    }
+}
+
+
+/* ---------- Small Mobile (max 576px) ---------- */
+@media (max-width: 576px) {
+
+    .jennifer-content h2 {
+        font-size: 24px;
+    }
+
+    .jennifer-content p {
+        font-size: 14px;
+    }
+
+    .social-side-bar img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .jennifer-image::before {
+        width: 280px;
+        height: 260px;
+    }
+}
 
   .services-grid {
     gap: 18px;
@@ -1287,7 +1557,7 @@ header {
 
 .popular-treatments-section .treatment-item {
     flex: 1 1 220px; 
-    max-width: 300px;
+    width: 300px;
     box-sizing: border-box;
     text-align: center;
 }
@@ -1346,17 +1616,21 @@ header {
 
 /* Mobile Adjustments */
 @media (max-width: 768px) {
-    .popular-treatments-section .treatment-item,
+    
+    .popular-section.popular-treatments-section .treatment-item,
     .results-section .result-card,
     .testimonials-section .testimonial-card {
         flex: 1 1 45%; /* Two items per row */
     }
-    .popular-treatments-section h2{
+    .popular-treatments h2{
         text-align: left;
     }
     .testimonials-section h2{
         text-align: left;
         width: 400px;
+    }
+    .testimonials-section{
+        width: 1200px;
     }
     .results-section{
         text-align: left;
@@ -1392,7 +1666,6 @@ button, .primary-btn, .secondary-btn, .submit-btn, .book-online-btn {
 
 /* improve readability for long paragraphs on small screens */
 .hero-content p, .services-section .subtitle, .jennifer-content p {
-  max-width: ;
   margin-left: auto;
   margin-right: auto;
 }
