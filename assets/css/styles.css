@@ -82,11 +82,13 @@ body {
 /* ===================================== */
 /* --- 2. Navigation/Header Styling --- */
 /* ===================================== */
-
 header{
+    background-color: #FDE7FF;
+}
+
+#header-section{
     width: 1400px;
     margin: auto;
-    background-color: #FDE7FF;
     padding: 0 5%;
 }
 .navbar {
@@ -134,10 +136,14 @@ header{
 /* ===================================== */
 /* --- 3. Hero Styling --- */
 /* ===================================== */
+
+#first-section{
+    background-color: #FDE7FF;
+}
+
 #home{
     width: 1400px;
     margin: auto;
-    background-color: #FDE7FF;
     padding: 50px 10% 42px 5%;
 }
 .hero-section {
@@ -565,8 +571,11 @@ header{
 /* --- 7. Popular Treatments Styling --- */
 /* ===================================== */
 
-.popular-treatments-section {
+#second-section{
     background-color: #FDE7FF;
+}
+
+.popular-treatments-section {
     padding: 60px 5%;
     width: 1400px;
     margin: auto;
@@ -717,10 +726,14 @@ header{
 /* ===================================== */
 /* --- 9. Testimonials Styling --- */
 /* ===================================== */
+
+#third-section{
+    background-color: #FDE7FF;
+}
+
 .testimonials-section {
     width: 1400px;
     margin: auto;
-    background-color: #FDE7FF;
     text-align: center;
     padding: 60px 5%;
 }
@@ -950,6 +963,12 @@ background: #000;
     flex-direction: column;
     align-items: flex-end;
 }
+.input-group input{
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: transparent;
+}
 
 .cta-form input[type="email"] {
     width: 100%;
@@ -969,6 +988,13 @@ background: #000;
     border-radius: 5px;
     cursor: pointer;
     font-weight: 600;
+}
+
+#service{
+    border: none;
+    background: transparent;
+    appearance: none;
+    width: 100%;
 }
 
 
@@ -1051,7 +1077,7 @@ background: #000;
 }
 
 .footer-bottom {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     padding-top: 20px;
     border-top: 1px solid #303434;
