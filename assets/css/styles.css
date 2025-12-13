@@ -91,19 +91,11 @@ header{
     margin: auto;
     padding: 0 5%;
 }
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 0;
-}
-
-.navbar nav ul {
+ nav ul {
     list-style: none;
     display: flex;
 }
-
-.navbar nav ul li a {
+ nav ul li a {
     text-decoration: none;
     color: #201D1D;
     padding: 0 15px;
@@ -111,9 +103,50 @@ header{
     transition: color 0.5s;
     font-family: "mySeconde";
 }
-
-.navbar nav ul li a:hover{
+ nav ul li a:hover{
     color: #dc7bbf;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0 80px 0;
+
+}
+
+.logo{
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+}
+nav ul{
+    display: flex;
+}
+nav ul li {
+    list-style: none;
+    margin: 0 8px;
+}
+nav ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 7px 13px;
+    border-radius: 3px;
+    transition: 0.5;
+    text-transform: uppercase;
+    
+    
+}
+.menu-btn{
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+}
+#click{
+    display: none;
 }
 
 .book-online-btn {
@@ -210,10 +243,10 @@ header{
     content: "";
     position: absolute;
     top: 20%;
-    left: 40%;
-    width: 550px;
-    height: 500px;
-    background: url("/assets/image/Group\ 1000007080.png") no-repeat center/cover;
+    left: 45%;
+    width: 650px;
+    height: 600px;
+    background: url("../image/Group\ 1000007080.png") no-repeat center/cover;
     transform: translate(-50%, -50%);
     z-index: 0;
 }
@@ -354,11 +387,11 @@ header{
 .jennifer-image::before {
     content: "";
     position: absolute;
-    top: 35%;
+    top: 22%;
     left: 49%;
     width: 420px;
     height: 400px;
-    background: url("/assets/image/Group\ 1000007080.png") no-repeat center/cover;
+    background: url("../image/Group\ 1000007080.png") no-repeat center/cover;
     transform: translate(-50%, -50%);
     z-index: 0;
 }
@@ -1111,90 +1144,47 @@ background: #000;
 /*      HEADER & NAVBAR RESPONSIVE        */
 /* ====================================== */
 
-/* ----------- Large Tablet (max 1200px) ----------- */
-@media (max-width: 1200px) {
-    header {
-        width: 95%;
-        padding: 0 3%;
-    }
-
-    .navbar nav ul li a {
-        font-size: 0.9em;
-        padding: 0 12px;
-    }
-
-    .book-online-btn {
-        padding: 7px 18px;
-        font-size: 0.85em;
-    }
-}
 
 /* ----------- Tablet (max 992px) ----------- */
-@media (max-width: 992px) {
-    .navbar {
-        flex-direction: column;
-        gap: 12px;
-        text-align: center;
-    }
-
-    .navbar nav ul {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .navbar nav ul li a {
+@media only screen and (max-width: 940px){
+    .menu-btn{
         display: block;
-        padding: 8px 0;
-        font-size: 0.9em;
+    }
+    nav ul {
+        position: fixed;
+        top: 100px;
+        left: -100%;
+        background-color: black;
+        height: 50vh;
+        width: 100%;
+        text-align: center;
+        padding: 7px 0;
+        transition: all 0.5s ease;
+
+    }
+    #click:checked ~ .menu-btn i::before{
+        content: "\f00d";
     }
 
-    .book-online-btn {
-        margin-top: 8px;
-        padding: 7px 16px;
-        font-size: 0.85em;
+    #click:checked ~ ul {
+        left: 0%;
+
     }
+    nav ul li {
+        margin: 5px 0;
+    }
+    nav ul li a{
+        font-size: 22px;
+    }
+
+    #header-section {
+    width: 400px; 
+    margin: auto;
+    padding: 0 5%;
 }
 
-/* ----------- Mobile (max 768px) ----------- */
-@media (max-width: 768px) {
-    .logo img {
-        width: 120px;
-    }
-
-    header {
-        padding: 0 5%;
-    }
-
-    .navbar nav ul li a {
-        font-size: 0.85em;
-    }
-
-    .book-online-btn {
-        font-size: 0.8em;
-        padding: 6px 14px;
-    }
 }
 
-/* ----------- Small Mobile (max 576px) ----------- */
-@media (max-width: 576px) {
-    header {
-        padding: 0 3%;
-    }
-
-    .logo img {
-        width: 100px;
-    }
-
-    .navbar nav ul li a {
-        font-size: 0.8em;
-        padding: 6px 0;
-    }
-
-    .book-online-btn {
-        font-size: 0.75em;
-        padding: 5px 12px;
-    }
-}
 
 /* ==============
    Tablet: ≤ 1024px
@@ -1265,6 +1255,7 @@ background: #000;
         top: 35%;
         left: 50%;
     }
+
 }
 
 /* Mobile */
@@ -1449,7 +1440,7 @@ background: #000;
 @media (max-width: 768px) {
 
   /* Layout: stack navbar items vertically */
-  .navbar {
+  nav {
     align-items: flex-start;
   }
 
@@ -1458,12 +1449,12 @@ background: #000;
     margin-bottom: 8px;
   }
 
-  .navbar nav {
+   nav {
     width: 100%;
   }
 
   /* make nav links full-width rows */
-  .navbar nav ul {
+   nav ul {
     flex-direction: column;
     align-items: flex-start;
     gap: 6px;
@@ -1471,7 +1462,7 @@ background: #000;
     margin-top: 8px;
   }
 
-  .navbar nav ul li a {
+   nav ul li a {
     padding: 10px 12px;
     display: block;
     width: 100%;
